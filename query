@@ -17,6 +17,16 @@ where dbo.basics.runtimeMinutes IS NULL
 delete from dbo.basics
 where dbo.basics.startYear IS NULL
 
+## Delete de filmes mais antigos que 2020
+
+delete dbo.basics
+where dbo.basics.startYear < 2020
+
+## Delete de colunas que não serão usadas na análise 
+
+alter table dbo.basics
+drop column titleType, runtimeMinutes
+
 
 select *
 from dbo.basics
