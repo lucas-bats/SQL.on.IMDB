@@ -1,0 +1,22 @@
+## Drop em colunas não relevantes
+
+alter table dbo.basics
+drop column isAdult, genres, originalTitle, endYear
+
+
+## Delete em linhas que não são de filmes
+
+delete from dbo.basics
+where NOT dbo.basics.titleType  = 'movie'
+
+## Delete de valores nulos
+delete from dbo.basics
+where dbo.basics.runtimeMinutes IS NULL
+
+## Delete de valores nulos
+delete from dbo.basics
+where dbo.basics.startYear IS NULL
+
+
+select *
+from dbo.basics
